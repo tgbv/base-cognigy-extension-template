@@ -9,7 +9,8 @@
     "test": "npx jest ./src --runInBand --passWithNoTests",
     "build:copy:assets": "[ -d src/assets ] && cp -r src/assets build/assets || true",
     "build": "npm run test && rm -rf ./build && npm run transpile && npm run build:copy:assets && node ./build/index.js && npm run zip",
-    "build-notest": "rm -rf ./build && npm run transpile && npm run build:copy:assets && node ./build/index.js && npm run zip"
+    "build-notest": "rm -rf ./build && npm run transpile && npm run build:copy:assets && node ./build/index.js && npm run zip",
+    "build-windows": "npm run test && del /f /s /q build && npm run transpile && node ./build/index.js && npm run zip"
   },
   "keywords": [],
   "author": "AUTHOR",
